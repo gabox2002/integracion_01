@@ -20,7 +20,7 @@ while jugar_nuevamente.lower() == "s":
 
     if modo == "1":
         pass
- 
+        
     elif modo == "2":
         print("\nADIVINÁ EL BINARIO A PARTIR DE UN DECIMAL")
         print("Elegí un nivel de dificultad:")
@@ -55,7 +55,6 @@ while jugar_nuevamente.lower() == "s":
             intento_usuario = intento.zfill(bits)
             if intento_usuario == numero_binario:
                 print("✅ ¡Correcto!")
-                intentos += 1
             else:
                 print(f"❌ Incorrecto. El valor correcto era: {numero_binario}")
                 print("\n¿Cómo se convierte un número decimal a binario?")
@@ -70,18 +69,13 @@ while jugar_nuevamente.lower() == "s":
                     pasos.append(f"  {temp} ÷ 2 = {cociente}, resto = {resto}")
                     temp = cociente
 
-                pasos.reverse()
                 for paso in pasos:
                     print(paso)
 
                 print(f"\n  El resultado en binario (leyendo los restos de abajo hacia arriba) es: {numero_binario}")
-                intentos = 0
         else:
             print("❌ Entrada inválida. Solo se permiten 0 y 1.")
             print(f"El valor correcto era: {numero_binario}")
-            intentos = 0
-
-        print(f"Número de intentos correctos: {intentos}")
 
     jugar_nuevamente = input("\n¿Querés volver al menú principal? (s/n): ")
 
