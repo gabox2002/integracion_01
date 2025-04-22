@@ -41,9 +41,19 @@ while jugar_nuevamente.lower() == "s":
 
         max_numero = 2**bits - 1
         numero_decimal = random.randint(0, max_numero)
-        numero_binario = bin(numero_decimal)[2:].zfill(bits)
+       
+        n = numero_decimal
+        numero_binario = ""
+
+        while n > 0:
+            numero_binario = str(n % 2) + numero_binario
+            n = n // 2
+
+        numero_binario = numero_binario.zfill(bits) if numero_binario else "0".zfill(bits)
+        print(f"Binario: {numero_binario}")
 
         print(f"\nAdiviná el número binario del decimal: {numero_decimal}")
+
         intento = input("Tu respuesta (binario): ")
 
         solo_0_y_1 = True
